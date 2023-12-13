@@ -38,8 +38,7 @@ jobs:
           script: |
             echo "Connection Success"
             cd ~/apps/testGitAction
-      - run: git pull origin stage
-      - run: npm ci
-      # - run: npm run prisma
-      - run: npm run build
-      - run: pm2 reload ecosystem.config.js
+            git pull origin stage
+            npm ci
+            npm run build
+            pm2 reload ecosystem.config.js
