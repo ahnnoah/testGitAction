@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'testGitAction',
-      script: 'npm run start:dev',
+      script: 'node ./dist/main.js',
     },
   ],
 };
