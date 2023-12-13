@@ -34,9 +34,11 @@ jobs:
           username: bitnami
           port: 22
           key: $SSH_KEY
+          script_stop: true
           script: |
             echo "test"
             cd ~/apps/testGitAction
+          run: |
             git pull origin stage
             npm ci
             npm run prisma
