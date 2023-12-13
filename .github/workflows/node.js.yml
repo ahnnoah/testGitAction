@@ -11,10 +11,16 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+      SSH_KEY: ${{ secrets.SSH_KEY }}
 
     steps:
       - name: Branch Checkout
         uses: actions/checkout@v4
+
+      - name: Show Environments
+        run: |
+          echo "SSH_KEY $SSH_KEY"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -27,8 +33,7 @@ jobs:
           host: 52.78.111.104
           username: bitnami
           port: 22
-          key: ${{ secrets.SSH_KEY }}
-
+          key: $SSH_KEY
           script: |
             echo "test"
             cd ~/apps/testGitAction
