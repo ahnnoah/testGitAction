@@ -39,6 +39,6 @@ jobs:
             echo "Connection Success"
             cd ~/apps/testGitAction
             git pull origin stage
-            npm ci
+            npm i
             npm run build
             pm2 reload ecosystem.config.js
