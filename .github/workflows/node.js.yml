@@ -13,7 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.3.0
+      - name: Branch Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3 // 7
+        with:
+          node-version: latest
+
+      - name: Install dependencies
+        run: npm install // 8
 
       - name: execute remote ssh
         uses: appleboy/ssh-action@master
@@ -24,4 +33,9 @@ jobs:
           key_path: ~/.ssh/rsteam.pem
           script: |
             echo "test"
-            cd ~/apps
+            cd ~/apps/testGitAction
+            git pull
+            npm ci
+            npm run prisma
+            npm build
+            pm2 reload eco
