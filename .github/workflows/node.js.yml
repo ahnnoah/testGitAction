@@ -15,12 +15,12 @@ jobs:
       SSH_KEY: ${{ secrets.SSH_KEY }}
 
     steps:
-      - name: Branch Checkout
-        uses: actions/checkout@v4
-
       - name: Show Environments
         run: |
           echo "SSH_KEY $SSH_KEY"
+
+      - name: Branch Checkout
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
