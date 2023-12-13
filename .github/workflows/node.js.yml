@@ -38,9 +38,8 @@ jobs:
           script: |
             echo "test"
             cd ~/apps/testGitAction
-          run: |
-            git pull origin stage
-            npm ci
-            npm run prisma
-            npm run build
-            pm2 reload ecosystem.config.js
+      - run: git pull origin stage
+      - run: npm ci
+      - run: npm run prisma
+      - run: npm run build
+      - run: pm2 reload ecosystem.config.js
