@@ -21,9 +21,6 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install dependencies
-        run: npm install // 8
-
       - name: execute remote ssh
         uses: appleboy/ssh-action@master
         with:
@@ -38,4 +35,4 @@ jobs:
             npm ci
             npm run prisma
             npm build
-            pm2 reload eco
+            pm2 reload ecosystem.config.js
