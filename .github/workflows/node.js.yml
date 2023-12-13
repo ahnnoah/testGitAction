@@ -5,27 +5,23 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ['stage']
 
 jobs:
-  build:
-
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.17.1]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v3.3.0
+
+      - name: execute remote ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: 52.78.111.104
+          username: bitnami
+          port: 22
+          key_path: ~/.ssh/rsteam.pem
+          script: |
+            echo "test"
+            cd ~/apps
