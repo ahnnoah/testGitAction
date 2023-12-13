@@ -27,33 +27,7 @@ jobs:
           host: 52.78.111.104
           username: bitnami
           port: 22
-          key: -----BEGIN RSA PRIVATE KEY-----
-            MIIEpAIBAAKCAQEApLvENmKC0QJBz6osGDmHWUyfWqtc74n0/AXopEK02ZZSWC6I
-            IcR9yL5xXPEO5itPpgdGoaaUhxLzbod3iWveBl9/InimxdZEE2xQ/eiPyzXZeftW
-            DvRF7IuM8piwmJj3ASth3o9gWXCaoIf8KmSZJtBLBjL9fru41/uwPwJ3IObH+BT+
-            mZWKtVekdsvrZMHvO26xMqjFWVrEj0XYzbIJNDwWhCwEXH+R2GrAoh17keXxCvJF
-            RLg6Dg57kjY3yAfp7L8LNJIUMmXa6FnFZOlqju6WJ+rmtajJpqjnTLL5TgZ1ps+7
-            uKfjpqx9RJSkkBNiVfR4PdSuc0F3sZALeSIdVwIDAQABAoIBAB43Rr1HAoG97T5f
-            E2l6G+Z4VH54EjrpziLwHoUKq0uB9Caymku/U+cfb4HBwZ7ccOaeTQlXmcTQ6A/t
-            DzMIsxfuKk6zXLvLGn+Jja2VG9MFVJe4T0e87Jp/2mGhOjszS5NOVsxQ9jZRnjs1
-            1j4cZ68j468GaVL2segEBYb5N8qz3r9cuE1xmOearAcFzbpJZ4OLhBtHc6BBvG69
-            GoMDIVsXlKEzPcKdk7wFDp7K66RZtjkqSlEYjZ/K+7dncZwO2YlN320QJ+cxK4ui
-            jhREFDcABFl2jvYixQf4BiPxtyAyQWcr889b8DUeNQm3CVVPc0wCcNRxnBCv1eIT
-            WDPLrwECgYEA0NrfDSq979XXplD2Vy/ouFS8Zf0Oflz2n6LBvG2KtrZtGmELG5JY
-            XGrKELpe1hnkfDDu9CZn2AgGwy+jdObEXc94ZdqxouceO+2uhCGRgPNUro4JCirU
-            84QK71gEdfwinHrAdR4Mlv4eqhdSJPmAlWMQ81a460LQHYAcUlPGfIECgYEAyes9
-            fTIQvCIaDmyrKZiuf7EzOkMXq6ia0V6Lia+TAjNWaZqJ0IlXkIqYQvUxOzIVSstk
-            lkehkciDoZcLGuLJknUSKCcjGZbmia/wXeOHb2NVASVqgmGaobW6puzIrzEQjqtc
-            J6znwvT0mK2cDB0QDRUuVe0VUfkYr0XZTK6dDdcCgYBuUk7kK6Gs4G5LIhUdtObf
-            B5OE5AkV4pE7fcOMfuh43x/+gShW5hTarGYUM/4IZiD1IPv355mO2Z6I188l3wf2
-            7bKRStXuUNr9mO1ISlsLnH0sv0YzIrDd+O+1we6JTCgUNBsZQkgwMgeMnUj80vaC
-            8pNvlm2Th/Vav+M18Z61AQKBgQCOShaXrfs7CHECLzPi6TQ2ycGG0hbRIcyPtCdy
-            zGY1S8YePwfVC6PIONKZhL2/sEhu36uvdyT1Xa7c5VqvBJf1fEhiQUor0zn8Vx50
-            m00qgn45g4tt+6gDQtQYo428X0ACueEEGIVtzj67hMQNiUFxZrazWJIIpRfvE7LQ
-            pdAJGwKBgQCvBOWXwag4ywbZ7NhoOlnKg48cAZKjVpiqy15/UZvv8II1nXE9t1Mx
-            T31SDtuN4MytD+sKxEsKCnkfFPtw1RNOqOTHne6I3/Asfbowy+7Su8X0U+46Uc7+
-            FdA5Wh5QxYNbFUpuCXKeEk151WjOsCDorikGUiDi+s3/SMLj1/ONnw==
-            -----END RSA PRIVATE KEY-----
+          key: ${{ secrets.SSH_KEY }}
 
           script: |
             echo "test"
