@@ -38,7 +38,12 @@ jobs:
           script: |
             echo "Connection Success"
             cd ~/apps/testGitAction
+            echo "cd"
             git pull origin stage
+            echo "git pull"
             npm i
+            echo "npm i"
             npm run build
+            echo "npm build"
             pm2 reload ecosystem.config.js
+            echo "pm2 reload"
