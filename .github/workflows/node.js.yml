@@ -27,7 +27,7 @@ jobs:
           host: 52.78.111.104
           username: bitnami
           port: 22
-          key_path: ~/.ssh/rsteam.pem
+          key: ~/.ssh/rsteam.pem
           script: |
             echo "test"
             cd ~/apps/testGitAction
