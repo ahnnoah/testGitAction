@@ -6,12 +6,17 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getHello() {
+    return await this.appService.getHello();
   }
 
   @Get('error')
   getError() {
     throw new Error('Error~~!');
+  }
+
+  @Get('test-cache')
+  async testCache() {
+    return await this.appService.testCache();
   }
 }

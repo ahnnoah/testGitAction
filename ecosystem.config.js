@@ -1,8 +1,10 @@
 module.exports = {
   apps: [
     {
-      name: 'testGitAction',
-      script: 'node ./dist/main.js',
+      name: 'cache-test',
+      script: 'npm run start:dev',
+      mode: 'cluster',
+      instance: 2,
     },
   ],
 };
